@@ -1,0 +1,27 @@
+﻿@page "/"
+
+@inject HttpClient Http
+@using PostSharpBlazorSyncfusionGrid.Services
+@using Syncfusion.Blazor.Grids
+
+<p>Sample to demonstrate fetching data from the server with auto-retry on connection failures, and binding the resultant data to Syncfusion Grid</p>
+
+<SfGrid DataSource="@forecasts">
+    <GridColumns>
+        <GridColumn Field="@nameof(WeatherForecast.Summary)"></GridColumn>
+        <GridColumn Field="@nameof(WeatherForecast.TemperatureC)"></GridColumn>
+        <GridColumn Field="@nameof(WeatherForecast.TemperatureF)"></GridColumn>
+        <GridColumn Field="@nameof(WeatherForecast.Date)"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+
+@code {
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        WeatherService weatherService = new WeatherService(Http);
+        forecasts = await weatherService.GetCurrentForecast();
+    }
+}
