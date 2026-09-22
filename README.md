@@ -2,7 +2,7 @@
 
 ## Overview
 
-This sample demonstrates how to use Syncfusion Blazor DataGrid together with PostSharp-based application patterns to retrieve data from a server and automatically retry requests when transient connection failures occur. The application fetches data from the server, applies retry behavior when the connection is unavailable, and binds the resulting records to the Syncfusion Blazor DataGrid after a successful response. The sample provides a practical reference for improving resiliency in Blazor applications that depend on remote data sources.
+This sample demonstrates how to use Syncfusion [Blazor DataGrid](https://www.syncfusion.com/blazor-components/blazor-datagrid) together with PostSharp-based application patterns to retrieve data from a server and automatically retry requests when transient connection failures occur. The application fetches data from the server, applies retry behavior when the connection is unavailable, and binds the resulting records to the Syncfusion Blazor DataGrid after a successful response. The sample provides a practical reference for improving resiliency in Blazor applications that depend on remote data sources.
 
 ## Key Features
 
